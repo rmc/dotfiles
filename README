@@ -1,0 +1,13 @@
+Config files, my way.
+
+Contains dotfiles (.bash_profile, .gitconfig, .gitignore) and supporting scripts for configuring the bash shell my way.
+
+# Installation
+
+To install the dotfiles [Rake](http://rake.rubyforge.org/) is required. You can also download this [ruby script](http://pastie.org/195036) and run it from the dotfiles directory.
+
+Switch to the dotfiles directory and execute the command:
+
+    $ rake install
+    
+This command will create symbolic links for the dotfiles from this directory to your users home directory.

@@ -1,0 +1,5 @@
+[user]
+	name = Ruairi Mc Comb
+	email = ruairimccomb@gmail.com
+[core]
+	excludesfile = /Users/ruairi/.gitignore
