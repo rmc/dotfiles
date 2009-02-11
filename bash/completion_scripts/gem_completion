@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+require 'rubygems'
+
+class GemCompletion
+  def initialize(command)
+    @command = command
+  end
+  
+  def matches
+    gem_names.select do |gem_name|
+      gem_name[0, typed.length] == typed
+    end
+  end
+  
+  def typed
+    @command[/\s(.+?)$/, 1] || ''
+  end
+  
+  def gem_names
+    Gem.source_index.map { |s| s[1].name }
+  end
+end
+
+puts GemCompletion.new(ENV["COMP_LINE"]).matches
+exit 0
