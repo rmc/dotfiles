@@ -29,6 +29,12 @@ task :install do
   end
 end
 
+desc "add commit hooks to automatically push commits"
+task :add_hooks do 
+  system("echo 'git push' > .git/hooks/post-commit")
+  system("chmod 755 .git/hooks/post-commit")
+end
+
 def replace_file(file)
   system %Q{rm "$HOME/.#{file}"}
   link_file(file)
