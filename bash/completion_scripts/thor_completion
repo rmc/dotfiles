@@ -1,0 +1,68 @@
+#!/usr/bin/env ruby
+
+# to install, add the following line to your .bash_profile or .bashrc
+# complete -C path/to/thor_completion -o default thor
+
+# Thor completion will return matching thor tasks given typed text. This way
+# you can auto-complete tasks as you are typing them by hitting [tab] or [tab][tab]
+# This also caches the thor tasks for optimium speed
+class ThorCompletion
+  CACHE_FILE_NAME = '.thor_tasks~'
+  
+  def initialize(command)
+    @command = command
+  end
+  
+  def matches
+    matching_tasks.map do |task|
+      task.sub(typed_before_colon, '')
+    end
+  end
+  
+  private
+  
+  def typed
+    @command[/\s(.+?)$/, 1] || ''
+  end
+  
+  def typed_before_colon
+    typed[/.+\:/] || ''
+  end
+  
+  def matching_tasks
+    matching = all_tasks.select do |task|
+      task[0, typed.length] == typed
+    end
+  end
+  
+  def all_tasks
+    cache_current? ? tasks_from_cache : generate_tasks
+  end
+    
+  def cache_current?
+    thorfile && File.exist?(cache_file) && File.mtime(cache_file) >= File.mtime(thorfile)
+  end
+  
+  def thorfile
+    ['Thorfile', 'thorfile.rb', 'Thorfile.rb', Dir.glob('*.thor')].flatten.detect do |file|
+      File.file? File.join(Dir.pwd, file)
+    end
+  end
+  
+  def cache_file
+    File.join(Dir.pwd, CACHE_FILE_NAME)
+  end
+  
+  def tasks_from_cache
+    IO.read(cache_file).split
+  end
+  
+  def generate_tasks
+    tasks = `thor -T 2>/dev/null`.scan(/^[\w:]+/)
+    File.open(cache_file, 'w') { |f| f.write tasks.join("\n") } if tasks.size > 0
+    tasks
+  end
+end
+
+puts ThorCompletion.new(ENV["COMP_LINE"]).matches
+exit 0
