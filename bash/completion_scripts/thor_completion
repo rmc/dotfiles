@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-
+require 'open3'
 # to install, add the following line to your .bash_profile or .bashrc
 # complete -C path/to/thor_completion -o default thor
 
@@ -58,7 +58,8 @@ class ThorCompletion
   end
   
   def generate_tasks
-    tasks = `thor -T 2>/dev/null`.scan(/^[\w:]+/)
+    stdin, stdout, stderr = Open3.popen3('thor -T')
+    tasks = stdout.readlines.join.scan(/^[\w:_]+/)
     File.open(cache_file, 'w') { |f| f.write tasks.join("\n") } if tasks.size > 0
     tasks
   end
