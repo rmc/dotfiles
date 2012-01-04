@@ -3,3 +3,4 @@
 	email = ruairimccomb@gmail.com
 [core]
 	excludesfile = /Users/ruairi/.gitignore
+	quotepath = false

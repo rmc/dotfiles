@@ -10,4 +10,5 @@
 :update_sources: true
 :backtrace: false
 :bulk_threshold: 1000
-:http_proxy: http://127.0.0.1:5865
+install: --no-rdoc --no-ri
+update: --no-rdoc --no-ri
