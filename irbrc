@@ -4,7 +4,7 @@ require 'irb/completion'              # tab completion
 require 'pp'                          # pretty print
 
 IRB.conf[:AUTO_INDENT]= true 
-IRB.conf[:PROMPT_MODE]= :SHORT
+IRB.conf[:PROMPT_MODE]= :SIMPLE
 
 require 'awesome_print'               # awesome_print
 
