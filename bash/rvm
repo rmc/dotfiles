@@ -1,3 +1,0 @@
-if [[ -s /Users/ruairi/.rvm/scripts/rvm ]] ; then source /Users/ruairi/.rvm/scripts/rvm ; fi
-
-
