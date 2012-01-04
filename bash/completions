@@ -1,7 +1,3 @@
-if [ -f /opt/local/etc/bash_completion ]; then
-    . /opt/local/etc/bash_completion
-fi
-
 source ~/.bash/completion_scripts/git_completion
 complete -C ~/.bash/completion_scripts/rake_completion -o default rake
 complete -C ~/.bash/completion_scripts/thor_completion -o default thor
