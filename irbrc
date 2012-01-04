@@ -1,11 +1,12 @@
 require 'rubygems'
-require 'awesome_print'
 
 require 'irb/completion'              # tab completion
 require 'pp'                          # pretty print
 
 IRB.conf[:AUTO_INDENT]= true 
 IRB.conf[:PROMPT_MODE]= :SHORT
+
+require 'awesome_print'               # awesome_print
 
 unless IRB.version.include?('DietRB')
   IRB::Irb.class_eval do
@@ -19,4 +20,4 @@ else # MacRuby
       object.ai
     end
   end.new
-end
+end # end awesome_print config
