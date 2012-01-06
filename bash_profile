@@ -1,3 +1,4 @@
+source ~/.bash/smiley
 source ~/.bash/config
 source ~/.bash/paths
 source ~/.bash/aliases

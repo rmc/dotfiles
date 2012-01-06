@@ -1,0 +1,7 @@
+function smiley {
+  if [ $? -eq 0 ]; then
+    echo -e "\033[0;32m✓\033[m"
+  else
+    echo -e "\033[0;31m𐄂\033[m"
+  fi
+}
