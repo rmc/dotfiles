@@ -1,4 +1,5 @@
 source ~/.bash/completion_scripts/git_completion
+source /usr/local/etc/bash_completion
 complete -C ~/.bash/completion_scripts/rake_completion -o default rake
 complete -C ~/.bash/completion_scripts/thor_completion -o default thor
 complete -C ~/.bash/completion_scripts/project_completion -o default c

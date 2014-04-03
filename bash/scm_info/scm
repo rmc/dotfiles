@@ -3,8 +3,9 @@ source ~/.bash/scm_info/subversion
 
 function scm_status {
   if [ -d .svn ]; then
-    parse_svn_branch
+    echo "[$(parse_svn_branch)]" 
   else
-    parse_git_branch
+    echo "$(parse_git_branch)"
   fi
+  
 }

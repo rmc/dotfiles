@@ -1,5 +1,5 @@
 function parse_svn_branch {
-  parse_svn_url | sed -e 's#^'"$(parse_svn_repository_root)"'##g' | awk -F / '{print  "[" $2 "]"}'
+  parse_svn_url | sed -e 's#^'"$(parse_svn_repository_root)"'##g' | awk -F / '{print  $2}'
 }
 
 function parse_svn_url {
