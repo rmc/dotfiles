@@ -1,0 +1,23 @@
+windowTitle        = "${CWD/^.*\///}:${TM_FILEPATH/${CWD}\///}"
+
+fontName           = Menlo
+fontSize           = 13
+
+tabSize            = 2
+softTabs           = true
+
+spellingLanguage   = 'es'
+
+exclude            = "{*.{o,pyc},Icon\r,CVS,_darcs,_MTN,\{arch\},blib,*~.nib}"
+include            = "{*,.tm_properties,.htaccess}"
+
+[ *.{icns,ico,jpg,jpeg,m4v,nib,pdf,png,psd,pyc,rtf,tif,tiff,xib} ]
+binary           = true
+
+# integrate with rbenv
+TM_RUBY = "$HOME/.rbenv/shims/ruby"
+PATH = "$HOME/.rbenv/bin:$PATH"
+
+# integrate with gvm groovy
+TM_GROOVY = "$HOME/.gvm/groovy/current/bin/groovy"
+PATH = "$HOME/.gvm/groovy/current/bin/:$PATH"
