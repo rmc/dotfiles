@@ -1,12 +1,25 @@
 [user]
 	name = Ruairi Mc Comb
 	email = ruairimccomb@gmail.com
+[credential]
+	helper = osxkeychain
+[http]
+	postBuffer = 524288000
+	proxy = http://localhost:50000
 [core]
-	excludesfile = /Users/ruairi/.gitignore
-	quotepath = false
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+  excludesfile = /Users/ruairi/.gitignore
+[color]
+  diff = auto
+  status = auto
+[color "diff"]
+  meta = yellow
+  frag = magenta
+  old = red
+  new = green
+[color "status"]
+  added = yellow
+  changed = green 
+  untracked = white dim
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
