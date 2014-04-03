@@ -1,4 +1,4 @@
 PATH=~/.gem/ruby/1.8/bin:~/.gem/bin:$PATH
 PATH=~/bin:/usr/local/bin:/usr/local/sbin:/opt/local/bin:$PATH
-PATH=/usr/local/mysql/bin:~/Projects/django/django/bin:$PATH
+PATH=/usr/local/mysql/bin:~/Code/django/django/bin:$PATH
 export PATH
