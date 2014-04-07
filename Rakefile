@@ -36,7 +36,7 @@ task :add_hooks do
 end
 
 def replace_file(file)
-  system %Q{rm "$HOME/.#{file}"}
+  system %Q{rm -r "$HOME/.#{file}"}
   link_file(file)
 end
 
