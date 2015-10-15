@@ -34,18 +34,10 @@ alias ohmyzsh="mate ~/.oh-my-zsh"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git brew grails)
 
-
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=/usr/local/bin:$PATH
-
-# eval "$(rbenv init -)"
-# export PATH=~/.rbenv/shims:$PATH
-
-# pyenv
-# if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-
 export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
 # mysql
 export PATH=$PATH:/usr/local/mysql/bin
