@@ -40,8 +40,11 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 export PATH=/usr/local/bin:$PATH
 
-eval "$(rbenv init -)"
-#export PATH=~/.rbenv/shims:$PATH
+# eval "$(rbenv init -)"
+# export PATH=~/.rbenv/shims:$PATH
+
+# pyenv
+# if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
 # mysql
@@ -65,21 +68,7 @@ export PATH=$ORACLE_HOME:$PATH
 #export DYLD_LIBRARY_PATH=$ORACLE_HOME
 export TNS_ADMIN=$ORACLE_HOME/network/admin
 
-
-function switch_jdk() {
-  local wanted_java_version=$1
-  export JAVA_HOME=`/usr/libexec/java_home -F -v $wanted_java_version -a x86_64 -d64`
-
-  # cleaned PATH
-  export PATH=$(echo $PATH | sed -E "s,(/System)?/Library/Java/JavaVirtualMachines/[a-zA-Z0-9._]+/Contents/Home/bin:,,g")
-
-  # prepend wanted JAVA_HOME
-  export PATH=$JAVA_HOME/bin:$PATH
-
-  echo "Now using : "
-  java -version
-}
-
-#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
-[[ -s "/Users/ruairi/.gvm/bin/gvm-init.sh" ]] && source "/Users/ruairi/.gvm/bin/gvm-init.sh"
-
+# execute initializers for version managers
+for file in ~/.version-managers/*; do
+  source $file
+done
