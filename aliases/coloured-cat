@@ -1,0 +1,3 @@
+if which pygmentize > /dev/null; then
+  alias ccat='pygmentize -O style=monokai -g 2>/dev/null'
+fi
