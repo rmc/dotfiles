@@ -9,7 +9,7 @@ softTabs           = true
 spellingLanguage   = 'es'
 
 exclude            = "{*.{o,pyc},Icon\r,CVS,_darcs,_MTN,\{arch\},blib,*~.nib}"
-include            = "{*,.tm_properties,.htaccess}"
+include            = "{*,.tm_properties,.htaccess,.bowerrc,.gitignore}"
 
 [ *.{icns,ico,jpg,jpeg,m4v,nib,pdf,png,psd,pyc,rtf,tif,tiff,xib} ]
 binary           = true
