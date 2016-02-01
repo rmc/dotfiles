@@ -1,3 +1,4 @@
 function c { cd ~/Code/$1; }
 function geme { $EDITOR `ruby -rubygems -e "STDOUT.puts Gem.source_index.find_name('$1').last.full_gem_path"`; }
+function http { python -m SimpleHTTPServer; }
 
