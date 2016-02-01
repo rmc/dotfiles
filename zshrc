@@ -38,6 +38,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/sbin:$PATH
 export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
 # mysql
 export PATH=$PATH:/usr/local/mysql/bin
@@ -57,10 +58,15 @@ export COMPLIB=~/opt/complib
 export ORACLE_BASE=~/opt/instantclient/11.2.0.3.0
 export ORACLE_HOME=$ORACLE_BASE
 export PATH=$ORACLE_HOME:$PATH
-#export DYLD_LIBRARY_PATH=$ORACLE_HOME
+# export DYLD_LIBRARY_PATH=$ORACLE_HOME
 export TNS_ADMIN=$ORACLE_HOME/network/admin
 
 # execute initializers for version managers
 for file in ~/.version-managers/*; do
+  source $file
+done
+
+# aliases
+for file in ~/.aliases/*; do
   source $file
 done
