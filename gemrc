@@ -2,6 +2,7 @@
 :verbose: true
 :benchmark: false
 :sources: 
+- https://rubygems.org
 - http://gems.rubyforge.org/
 - http://gems.github.com/
 :gemhome: /Users/ruairi/.gem
