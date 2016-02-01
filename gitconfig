@@ -5,7 +5,7 @@
 	helper = osxkeychain
 [http]
 	postBuffer = 524288000
-	proxy = http://localhost:50000
+  # proxy = http://localhost:50000
 [core]
   excludesfile = /Users/ruairi/.gitignore
 [color]
