@@ -1,4 +1,4 @@
-alias http='python -m http.server'
+alias http='python -m SimpleHTTPServer'
 
 function geme { $EDITOR `ruby -rubygems -e "STDOUT.puts Gem::Specification.all.find{ |s| s.name == '$1' }.full_gem_path"` 2&>/dev/null }
 function c { cd ~/Code/$1 }
