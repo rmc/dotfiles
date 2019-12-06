@@ -4,7 +4,7 @@ filetype off
 call plug#begin('~/.vim/plugged')
 
 " vim-scripts repos
-Plug 'AutoComplPop'
+Plug 'maralla/completor.vim'
 Plug 'tomasr/molokai' " colour scheme
 Plug 'wincent/command-t' " fast file nagations
 Plug 'millermedeiros/vim-statline' " status line
