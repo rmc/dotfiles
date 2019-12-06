@@ -100,3 +100,12 @@ let g:syntastic_mode_map = { 'mode': 'active',
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '!'
 
+" completor
+
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
+
+let g:completor_auto_trigger = 0
+inoremap <expr> <Tab> pumvisible() ? "<C-N>" : "<C-R>=completor#do('complete')<CR>"
+
