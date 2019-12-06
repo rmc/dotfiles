@@ -35,3 +35,5 @@
   trustExitCode = true
 [commit]
 	template = /Users/ruairi/.stCommitMsg
+[merge]
+	tool = sourcetree
