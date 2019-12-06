@@ -1,0 +1,2 @@
+alias git_email_for_cepsa='git config --global user.email ruairi.mccomb@outsourcing.cepsa.com'
+alias git_email_for_personal='git config --global user.email ruairimccomb@gmail.com'
