@@ -1,3 +1,0 @@
-if which scalaenv > /dev/null; then 
-    eval "$(scalaenv init -)"; 
-fi
