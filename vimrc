@@ -19,6 +19,7 @@ Bundle 'AutoComplPop'
 " Bundle 'project'
 Bundle 'molokai'
 Bundle 'command-t'
+Bundle 'scrooloose/nerdcommenter'
 
 " original repos on github
 Bundle 'millermedeiros/vim-statline'
@@ -39,13 +40,20 @@ Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'honza/vim-snippets'
 Bundle 'garbas/vim-snipmate'
 Bundle 'rizzatti/funcoo.vim'
-Bundle 'rizzatti/dash.vim'
 
+" system settings
+set lazyredraw          " no redraws in macros
+set confirm             " get a dialog when :q, :w, or :wq fails
+set nobackup            " no backup~ files.
+set noswapfile          " no swap files
+set viminfo='20,\"500   " remember copy registers after quitting in the .viminfo file -- 20 jump links, regs up to 500 lines'
+set hidden              " remember undo after quitting
+set history=50          " keep 50 lines of command history
+set mouse=v             " use mouse in visual mode (not normal,insert,command,help mode)
 
 filetype plugin indent on
 
 syntax on
-set number
 
 " let g:solarized_termcolors=256
 " set background=dark
@@ -53,29 +61,43 @@ colorscheme molokai
 
 " tabs / spaces
 set autoindent
-set smartindent
-set expandtab
+set smartindent         " smart auto indenting
+set smarttab            " smart tab handling for indenting
+set magic               " change the way backslashes are used in search patterns
+set bs=indent,eol,start " Allow backspacing over everything in insert mode
+set expandtab           " turn a tabs into spaces
 set shiftwidth=2
 set softtabstop=2
 set tabstop=2
-set smarttab
+
+" display
 set nowrap
-set ruler
+set number              " show line numbers
+set relativenumber      " show relative line numbers
+set ruler               " show cursor position in status bar
+set cursorline          " highlight current line
+set scrolloff=2         " 2 lines above/below cursor when scrolling
+set showmatch           " show matching bracket (briefly jump)
+set matchtime=2         " show matching bracket for 0.2 seconds
+set showmode            " show mode in status bar (insert/replace/...)
+set showcmd             " show typed command in status bar
+set title               " show file in titlebar
+set wildmenu            " completion with menu
+set wildignore=*.o,*.obj,*.bak,*.exe,*.py[co],*.swp,*~,*.pyc,.svn
 
 " fix backspace
 set backspace=indent,eol,start 
+" fix regex
+nnoremap / /\v
+vnoremap / /\v
 
 " Searching
-set ignorecase
-set smartcase
-set incsearch
+set ignorecase          " case insensitive searching
+set smartcase           " but become case sensitive if you type uppercase characters
+set hlsearch            " highlight search (very useful!)
+set incsearch           " search incremently (search while typing)
 set showmatch
-set nohlsearch
 set gdefault
-
-" turn of backup and swap-files
-set nobackup
-set noswapfile
 
 " Turn off any bell
 set novisualbell
