@@ -1,3 +1,4 @@
+source ~/.profile
 source ~/.bash/smiley
 source ~/.bash/config
 # source ~/.bash/paths
