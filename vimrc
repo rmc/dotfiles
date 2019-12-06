@@ -1,20 +1,19 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/vundle.git/ 
-call vundle#rc()
+call plug#begin('~/.vim/plugged')
 
 " vim-scripts repos
-Bundle 'AutoComplPop'
-Bundle 'molokai'
-Bundle 'command-t'
+Plug 'AutoComplPop'
+Plug 'tomasr/molokai' " colour scheme
+Plug 'wincent/command-t' " fast file nagations
+Plug 'millermedeiros/vim-statline' " status line
+Plug 'tpope/vim-fugitive' " git plugin
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'scrooloose/syntastic'
 
-" original repos on github
-Bundle 'millermedeiros/vim-statline'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-commentary'
-Bundle 'scrooloose/syntastic'
+call plug#end()
 
 " system settings
 set lazyredraw          " no redraws in macros
