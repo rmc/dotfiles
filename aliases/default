@@ -2,3 +2,6 @@ alias http='python -m SimpleHTTPServer'
 
 function geme { $EDITOR `ruby -rubygems -e "STDOUT.puts Gem::Specification.all.find{ |s| s.name == '$1' }.full_gem_path"` 2&>/dev/null }
 function c { cd ~/Code/$1 }
+
+# convert key generated with ssh-keygen to x509 private key (this one sets an empty passphrase)
+function openssh_key_to_openssl { ssh-keygen -p -N "" -m pem -f $1 }
