@@ -51,7 +51,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(ant bundler git git-flow gradle grails)
+plugins=(asdf ant bundler git git-flow aws)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -78,12 +78,22 @@ export MANPATH="/usr/local/man:$MANPATH"
 alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# execute initializers for version managers
-for file in ~/.version-managers/*; do
-  source $file
-done
 
 # aliases
 for file in ~/.aliases/*; do
   source $file
 done
+
+# asdf version manager
+. ~/.asdf/asdf.sh
+#. ~/.asdf/plugins/java/set-java-home.zsh
+
+# A shortcut for asdf managed direnv.
+direnv() { asdf exec direnv "$@"; }
+
+# append completions to fpath
+fpath=(${ASDF_DIR}/completions $fpath)
+# initialise completions with ZSH's compinit
+autoload -Uz compinit
+compinit
+# end asdf
