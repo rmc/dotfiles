@@ -2,13 +2,14 @@
 	name = Ruairi Mc Comb
 	email = ruairimccomb@gmail.com
 [credential]
-	helper = osxkeychain
+	helper = ""
 [http]
 	postBuffer = 524288000
   # proxy = http://localhost:50000
 [core]
 	excludesfile = /Users/ruairi/.gitignore
-	autocrlf = input
+  autocrlf = input
+  pager = delta
 [color]
   diff = auto
   status = auto
@@ -34,7 +35,8 @@
   cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
   trustExitCode = true
 [commit]
-	template = /Users/ruairi/.stCommitMsg
+	template = /Users/ruairi/.git-commit-template.txt
+	cleanup = strip
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
@@ -42,3 +44,15 @@
 	smudge = git-lfs smudge -- %f
 [merge]
 	tool = sourcetree
+[credential]
+	helper = manager-core
+[credential "https://dev.azure.com"]
+  useHttpPath = true
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    plus-style = "syntax #012800"
+    minus-style = "syntax #340001"
+    syntax-theme = Monokai Extended
+    navigate = true
