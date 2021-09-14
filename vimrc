@@ -19,6 +19,8 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'scrooloose/syntastic'
 
+Plug  'sickill/vim-monokai'
+
 call plug#end()
 
 " system settings
@@ -37,7 +39,7 @@ syntax on
 
 " let g:solarized_termcolors=256
 " set background=dark
-colorscheme molokai
+colorscheme monokai
 
 " tabs / spaces
 set autoindent
