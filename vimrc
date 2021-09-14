@@ -1,6 +1,12 @@
 set nocompatible
 filetype off
 
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 call plug#begin('~/.vim/plugged')
 
 " vim-scripts repos
@@ -60,7 +66,7 @@ set wildmenu            " completion with menu
 set wildignore=*.o,*.obj,*.bak,*.exe,*.py[co],*.swp,*~,*.pyc,.svn
 
 " fix backspace
-set backspace=indent,eol,start 
+set backspace=indent,eol,start
 " fix regex
 nnoremap / /\v
 vnoremap / /\v
@@ -108,4 +114,3 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
 
 let g:completor_auto_trigger = 0
 inoremap <expr> <Tab> pumvisible() ? "<C-N>" : "<C-R>=completor#do('complete')<CR>"
-
