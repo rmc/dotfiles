@@ -78,6 +78,14 @@ export MANPATH="/usr/local/man:$MANPATH"
 alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
 
+setopt extendedglob;
+
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
 
 # aliases
 for file in ~/.aliases/*; do
